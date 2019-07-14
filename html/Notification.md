@@ -1,9 +1,9 @@
-试水H5的Notification特性
+# 试水H5的Notification特性
 
-看到微博有使用桌面通知功能，感觉还挺酷，本文就来研究研究
+　　看到微博有使用桌面通知功能，感觉还挺酷，本文就来研究研究
 
 ## 了解用户权限 - Notification.permission
-`Notification.permission`是一个静态属性，用于表明当前通知显示授权状态，返回一个`string`类型的字符串，可以根据返回值判断用户是否授予了通知权限。
+　　`Notification.permission`是一个静态属性，用于表明当前通知显示授权状态，返回一个`string`类型的字符串，可以根据返回值判断用户是否授予了通知权限。
 返回值有三种情况：
 
 - default
@@ -21,17 +21,17 @@
 
 ## 请求权限 - Notification.requestPermission(callback)
 
-应用发送通知之前必须要取得发送通知的权限，才能成功进行通知. `Notification.requestPermission(callback)`是请求获取权限的方法，允许传入一个回调，回调会返回用户选择的何种权限，返回两个值，`granted`代表允许，`denied`代表拒绝。 并且`Notification.requestPermission()`支持then方式的链式调用，也就意味着可以异步调用它
+　　应用发送通知之前必须要取得发送通知的权限，才能成功进行通知. `Notification.requestPermission(callback)`是请求获取权限的方法，允许传入一个回调，回调会返回用户选择的何种权限，返回两个值，`granted`代表允许，`denied`代表拒绝。 并且`Notification.requestPermission()`支持then方式的链式调用，也就意味着可以异步调用它
 
 ## 创建通知
-`new Notification(title, options)`方法创建可以创建一个通知实例，允许参入参数两个参数`title`和`options`。 注意默认情况下（实际可以通过`options`中的`timestamp`参数控制）一旦通知实例被创建出来，它会立即被显示出来
+　　`new Notification(title, options)`方法创建可以创建一个通知实例，允许参入参数两个参数`title`和`options`。 注意默认情况下（实际可以通过`options`中的`timestamp`参数控制）一旦通知实例被创建出来，它会立即被显示出来
 
 - title 参数
 
- 表示通知的标题。必须参数，允许数字、字符串和空
+  表示通知的标题。必须参数，允许数字、字符串和空
 - options 参数
 
- 非必须参数，必须为一个对象，参数如下:
+  非必须参数，必须为一个对象，参数如下:
  ```
  {
     //通知显示正文。非必须，默认为空
@@ -117,9 +117,9 @@ function CreatNotification() {
     }
 }
 ```
-该API伴随服务器操作，打开浏览器，运行localhost，会出现一个弹窗
+　　该API伴随服务器操作，打开浏览器，运行localhost，会出现一个弹窗
 
-*注意：如果这段代码放在html中执行，一定要创建虚拟服务器，即用域名访问，如：localhost，不能直接用file:index.html 这样的路径访问，因为这个不是http协议，浏览器不接受本地文件的通知设置*
+　　**注意**：*如果这段代码放在html中执行，一定要创建虚拟服务器，即用域名访问，如：localhost，不能直接用file:index.html 这样的路径访问，因为这个不是http协议，浏览器不接受本地文件的通知设置*
 
 
 ### 参考：

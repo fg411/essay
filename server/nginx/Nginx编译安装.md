@@ -1,6 +1,7 @@
-#Nginx编译安装
+# Nginx编译安装
 
-###准备
+### 准备
+
 需安装 gcc、openssl、zlib、pcre
 　　对于 gcc，因为安装nginx需要先将官网下载的源码进行编译，编译依赖gcc环境，如果没有gcc环境的话，需要安装gcc。
 
@@ -27,7 +28,8 @@
 >cd nginx-1.14.0
 ```
 
-编译安装 nginx
+### 编译安装 nginx
+
 =========================================
 ```shell
 >./configure
@@ -46,6 +48,7 @@ make -j带一个参数，进行并行编译，一般以CPU的核心数目的两�
 ```
 
 ==========================================
+
 如果整个过程中没有报错，此时已成功安装 `nginx`。此时，在 `/usr/local/nginx` 下有四个主要的目录：
 
 　　1、'conf'：保存nginx所有的配置文件，其中nginx.conf是nginx服务器的最核心最主要的配置文件，其他的.conf则是用来配置nginx相关的功能的，例如fastcgi功能使用的是fastcgi.conf和fastcgi_params两个文件，配置文件一般都有个样板配置文件，是文件名.default结尾，使用的使用将其复制为并将default去掉即可。
@@ -59,11 +62,13 @@ make -j带一个参数，进行并行编译，一般以CPU的核心数目的两�
 ### nginx 的常用命令语句
 
 =========================================
+
 nginx -t			// 测试配置是否正确
 nginx -s reload		// 加载最新配置
 nginx -s stop		// 立即停止
 nginx -s quit		// 优雅停止
 nginx -s reopen		// 重新打开日志
+
 =========================================
 
 ### nginx 编译配置参数
@@ -167,6 +172,6 @@ http {
 
 ----------------------
 
-[Nginx 之一：编译安装nginx 1.8.1 及配置](https://www.cnblogs.com/zhang-shijie/p/5294162.html)
-[Nginx(1.14.0)负载均衡+Tomcat(8.0)集群搭建](https://blog.csdn.net/weixin_38371113/article/details/81671819)
-[Nginx（一）------简介与安装](https://www.cnblogs.com/ysocean/p/9384877.html)
+1. [Nginx 之一：编译安装nginx 1.8.1 及配置](https://www.cnblogs.com/zhang-shijie/p/5294162.html)
+2. [Nginx(1.14.0)负载均衡+Tomcat(8.0)集群搭建](https://blog.csdn.net/weixin_38371113/article/details/81671819)
+3. [Nginx（一）------简介与安装](https://www.cnblogs.com/ysocean/p/9384877.html)

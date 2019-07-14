@@ -1,4 +1,4 @@
-#Linux下常用的 tar 命令
+# Linux下常用的 tar 命令
 Linux下压缩文件有很多，让人混淆：`*.tar` 、`*.tar.gz` 、`*.tgz` 、`*.gz `、`*.Z` 、`*.bz2`
 
 ##  基础概念
@@ -31,7 +31,6 @@ Linux下压缩文件有很多，让人混淆：`*.tar` 、`*.tar.gz` 、`*.tgz` 
 -m 保留文件不被覆盖
 -W 确认压缩文件的正确性
 ```
-
 
 tar命令的选项有很多(用man tar可以查看到)，下面列出常用的
 
@@ -90,7 +89,8 @@ bzip2是一个压缩能力更强的压缩程序，.bz2结尾的文件就是bzip2
 将上面产生的包解压打开
 
 -------------
-###zip
+### zip
+
 linux下提供了zip和unzip程序，zip是压缩程序，unzip是解压程序
 ``` shell
 >zip all.zip *.jpg

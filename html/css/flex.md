@@ -1,6 +1,7 @@
 # 了解一下 flex
 
-###1、介绍
+### 1、介绍
+
 　　布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。
 flex（flexible box：弹性布局盒模型）。在webkit内核的浏览器中使用时，必须加上 `-webkit-`前缀。
 使用flex布局的容器(flex container)，它内部的元素自动成为flex项目(flex item)。
@@ -8,14 +9,14 @@ flex（flexible box：弹性布局盒模型）。在webkit内核的浏览器中�
 注意：flex容器内元素，即`flex item`的float、clear、vertical-align属性将失效
 
 ### 2、容器属性
-```
-1：flex-direction
-2：flex-wrap
-3：flex-flow
-4：justify-content
-5：align-items
-6：align-content
-```
+
+1. `flex-direction`
+2. `flex-wrap`
+3. `flex-flow`
+4. `justify-content`
+5. `align-items`
+6. `align-content`
+
 #### 2.1 `flex-direction`属性
 　　决定主轴的方向，即项目排列的方向。有四个可选值：row(默认)|row-reverse|column|column-reverse
  - row（默认值）：主轴为水平方向，起点在左端
@@ -59,14 +60,12 @@ flex（flexible box：弹性布局盒模型）。在webkit内核的浏览器中�
 　　flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
 
 ### 3、`flex item` 属性
-``` javascript
-1：order
-2：flex-grow
-3：flex-shrink
-4：flex-basis
-5：flex
-6：align-self
-```
+1. `order`
+2. `flex-grow`
+3. `flex-shrink`
+4. `flex-basis`
+5. `flex`
+6. `align-self`
 
 #### 3.1 `order` 属性
 　　order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0
@@ -81,6 +80,7 @@ flex（flexible box：弹性布局盒模型）。在webkit内核的浏览器中�
 #### 3.6 `align-self` 属性
 　　align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch
 
-**资料**
+### 资料
+
 ------------
-[3分钟看懂flex布局](https://www.cnblogs.com/lixuemin/p/6110434.html)
+ - [3分钟看懂flex布局](https://www.cnblogs.com/lixuemin/p/6110434.html)

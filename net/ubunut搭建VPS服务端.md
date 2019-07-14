@@ -1,4 +1,4 @@
-#ubuntu 搭建shadowsocks服务
+# ubuntu 搭建shadowsocks服务
 
 更新软件源
 
