@@ -5,7 +5,8 @@
 ```
 ├─components    # 常用组件
 ├─Demo          # 暂时放一些 html 类的 demo
-│  └─html
+│  ├─js         # js
+│  └─html       # html
 ├─disorder      # 杂文
 ├─html          # html 和 html5
 │  └─css        # css 和 css3
