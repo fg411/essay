@@ -10,16 +10,10 @@
 ├─html          # html 和 html5
 │  └─css        # css 和 css3
 ├─http          # http知识
-├─net           # 网络方面的知识，与http有些重叠
-└─server        # 服务器方面的知识
-    ├─linux     # linux
-    └─nginx     # nginx
+├─net           # 网络方面的知识，与http有些重叠    
+├─server        # 服务器方面的知识
+│  ├─linux      # linux
+│  └─nginx      # nginx
+└─tool          # 工具类
 ```
 
-------
-
-2019年书单：
-
- - ~~放学后~~
- - 树莓派
- - 浪潮之巅
