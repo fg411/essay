@@ -8,8 +8,9 @@
 │  ├─js         # js
 │  └─html       # html
 ├─disorder      # 杂文
-├─html          # html 和 html5
-│  └─css        # css 和 css3
+├─html          # html 和 html5     
+│  ├─css        # css 和 css3
+│  └─js         # js
 ├─http          # http知识
 ├─net           # 网络方面的知识，与http有些重叠    
 ├─server        # 服务器方面的知识
