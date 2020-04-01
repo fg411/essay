@@ -4,7 +4,7 @@
 
 ### 为什么会有`let` 和 `const`
 
-　　ES5只有 全局作用域 和 函数作用域，有事遇到一些不合理的场景，比如遇到下面的代码，大部分人会选择使用闭包来解决这个问题。而`ES6`引入的`let`可以完美的解决这个问题。至于如何使用闭包实现`let`功能，可以看[这里](https://fg411.github.io/learn-es6-let/)，有错误的话，还望指正。
+　　ES5只有 全局作用域 和 函数作用域，有时遇到一些不合理的场景，比如遇到下面的代码，大部分人会选择使用闭包来解决这个问题。而`ES6`引入的`let`可以完美的解决这个问题。至于如何使用闭包实现`let`功能，可以看[这里](https://fg411.github.io/learn-es6-let/)，有错误的话，还望指正。
 
 ```javascript
 `use strict`
@@ -172,6 +172,16 @@ var a = 1
 console.log(a)    // 1
 function a(){}
 console.log(a)    // 1
+```
+
+```javascript
+for (let i = 0; i < 3; i++) {
+  let i = 'abc';
+  console.log(i);
+}
+// abc
+// abc
+// abc
 ```
 ------
 
