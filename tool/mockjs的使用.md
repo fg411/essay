@@ -60,3 +60,10 @@ require('./mock.js');
 
 // 引入文件的上下文部分省略
 ```
+
+------
+
+## 资料
+
+ - [开始 & 安装](https://github.com/nuysoft/Mock/wiki/Getting-Started)
+ - [示例](http://mockjs.com/examples.html)
