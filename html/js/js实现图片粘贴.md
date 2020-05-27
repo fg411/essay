@@ -68,6 +68,8 @@ function insertHtmlAtCaret(childElement){
 ```
 　　看demo说可以兼容IE10，写了半天还是不行，*我TM心态都崩了啊*。其实获取剪切板的内容并难，把剪切板内容添加到光标处才是全篇最麻烦的地方，demo里的`insertHtmlAtCaret`是网上看到的，内容我也没太明白，等哪天需要再好好研究
 
+ [Demo](../../Demo/html/js粘贴图片.html)
+
 ---
 
 ### 知识点：

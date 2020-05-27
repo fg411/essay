@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>paste</title>
+</head>
+<body>
+	<div id="preview" contenteditable="true">
+		江湖笑，<br />
+		恩怨了，<br />
+		人过招，<br />
+		笑藏刀。 <br />
+	</div>
+	<div>
+		<h4>资料：</h4>
+		<ul>
+			<li>
+				<a href="https://www.jb51.net/article/80657.htm">js实现ctrl+v粘贴上传图片(兼容chrome、firefox、ie11)</a>
+			</li>
+			<li>
+				<a href="https://www.runoob.com/jsref/met-document-createdocumentfragment.html">HTML DOM createDocumentFragment() 方法</a>
+			</li>
+			<li>
+				<a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/paste">Element: paste事件</a>
+			</li>
+			<li>
+				<a href="https://www.cnblogs.com/fj99/p/5499233.html">div中粘贴图片并上传服务器 div中拖拽图片文件并上传服务器</a>
+			</li>
+			<li>
+				<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getSelection">Window.getSelection</a>
+			</li>
+			<li>
+				<a href="http://www.mamicode.com/info-detail-2579337.html">FileReader获取上传图片的宽高</a>
+			</li>
+		</ul>
+	</div>
+</body>
+
+<script type="text/javascript">
+	document.addEventListener('paste', function(event){
+		var items = (event.clipboardData || window.clipboardData).items;
+		var blob = null;
+		var str = null;
+		if(items && items.length) {
+			for(var i = 0; i < items.length; i++) {
+				if(items[i].kind == 'file' && items[i].type.indexOf('image') !== -1) {
+					blob = items[i].getAsFile();
+					break;
+				} else if(items[i].kind === "string" && items[i].type.indexOf('text/plain') != -1) {
+					items[i].getAsString(function (str) {
+                        insertHtmlAtCaret(document.createTextNode(str));//插入文本到光标处并移动光标到新位置
+                    })
+                    return;
+				}
+			}
+		}
+		var reader = new FileReader();
+		reader.onload = function(event) {
+			var img = document.createElement('img');
+			img.src = event.target.result;
+			insertHtmlAtCaret(img);
+			// document.getElementById('preview').innerHTML = '<img src="' + event.target.result + '" class="upload-image">';
+		    event.preventDefault();
+		}
+		reader.readAsDataURL(blob);
+	})
+	function insertHtmlAtCaret(childElement){
+		var selection, range;
+		if(window.getSelection) { // IE11 and non-IE
+			selection = window.getSelection();
+			if(selection.getRangeAt && selection.rangeCount) {
+				range = selection.getRangeAt(0);
+            	range.deleteContents();
+            	var el = document.createElement("div");
+            	el.appendChild(childElement);
+            	var frag = document.createDocumentFragment(), node, lastNode;
+            	while ((node = el.firstChild)) {
+	                lastNode = frag.appendChild(node);
+	            }
+	            range.insertNode(frag);
+	            if (lastNode) {
+	                range = range.cloneRange();
+	                range.setStartAfter(lastNode);
+	                range.collapse(true);
+	                selection.removeAllRanges();
+	                selection.addRange(range);
+	            }
+			}
+		} else if(document.selection && document.selection.type != "Control") { // IE < 9
+			//document.selection.createRange().pasteHTML(html);
+		}
+	}
+</script>
+</html>
